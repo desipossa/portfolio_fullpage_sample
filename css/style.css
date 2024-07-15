@@ -250,6 +250,15 @@ body {
     opacity: 0;
 }
 
+.pt .inner .mokup img {
+    transform: translate(0, 0);
+    transition: 0.5s;
+}
+
+.pt .inner .mokup:hover img {
+    transform: translate(0, calc(-100% + 50rem));
+}
+
 .pt.active .inner .mokup {
     transform: translate(0, 0);
     opacity: 1;

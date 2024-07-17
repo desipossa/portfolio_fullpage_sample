@@ -1,6 +1,7 @@
 MainFullpage();
 menuBtnAction();
 profileSlide();
+bubleAnimation();
 
 function MainFullpage() {
     let tt = false;
@@ -131,6 +132,27 @@ function profileSlide() {
             shadowScale: 0.7,
         },
     })
+}
+
+function bubleAnimation() {
+    const tl = gsap.timeline({ repeat: -1 });
+
+
+    let targets = gsap.utils.toArray(".portfolio03 span");
+
+    targets.forEach((it, idx) => {
+        let randomNumber = gsap.utils.random(1, Math.floor(targets.length / 3), 1);
+        let randomNumber2 = gsap.utils.random(1, Math.floor(targets.length / 3), 1);
+        console.log(randomNumber, randomNumber2)
+        tl.from(it, {
+            duration: 1,
+            y: "random(100, 200, true)",
+            ease: "elastic.out(1, 0.5)",
+            opacity: 0,
+            delay: randomNumber * 0.1 + randomNumber2 * 0.1
+        }, 0)
+    })
+
 }
 
 
